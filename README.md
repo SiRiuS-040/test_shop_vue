@@ -1,5 +1,7 @@
 # test_shop_vue
 
+https://sirius-040.github.io/test_shop_vue/#/
+
 ## Project setup
 ```
 npm install
