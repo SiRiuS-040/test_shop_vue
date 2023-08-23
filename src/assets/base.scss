@@ -1,0 +1,90 @@
+:root {
+  --black: #000000;
+  --black-semi-025: rgba(0, 0, 0, 0.25);
+  --black-semi-024: rgba(0, 0, 0, 0.24);
+  --black-semi-015: rgba(0, 0, 0, 0.15);
+  --ultimate-grey: #a9a9a9;
+  --ultimate-grey-030: rgba(169, 169, 169, 0.3);
+  --lunar-rock: #c5c5c5;
+  --lunar-rock-030: rgba(197, 197, 197, 0.3);
+  --beluga: #f1f1f1;
+  --white: #ffffff;
+  --white-030: rgba(255, 255, 255, 0.3);
+  --child-of-light: #f1f5f7;
+  --distant-horizon: #f3f7f9;
+  --plaster: #eaeaea;
+  --cold-morning: #e5e5e5;
+  --silver-bird: #f9f5f0;
+  --smart-white: #f7f3ec;
+  --brainstem-grey: #b5b5b5;
+  --dhusar-grey: #ababab;
+  --dhusar-grey-03: rgb(171, 171, 171, 0.3);
+  --bread-n-butter: #ffd180;
+  --narenji-orange: #ffbf47;
+  --red-radish: #ee3643;
+  --madder-lake: #ca2c37;
+  --mars-red: #ba2732;
+  --coarse-wool: #161d29;
+  --bunting: #293449;
+  --midnight-express: #1d2739;
+  --midnight-express-2: #212a3a;
+  --passionate-blueberry: #32425c;
+  --blackberry-cobbler: #405069;
+  --atlantic-tide: #3d546f;
+  --lake-thun: #3bbce3;
+  --nenophilist: #367315;
+  --hot-pepper-green: #518534;
+  --siren-of-nature: #63a63e;
+  --field-green: #5fbb2d;
+  --leek: #8ed78f;
+  --lavender-pink: #dc91d8;
+}
+
+.app-body {
+  min-width: 960px;
+  margin: 0;
+  padding: 0;
+
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.2;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--black);
+  background-color: var(--white);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 940px;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

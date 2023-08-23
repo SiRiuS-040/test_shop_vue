@@ -1,0 +1,101 @@
+.app-header {
+  background: var(--child-of-light);
+
+  &__top {
+    background: var(--bunting);
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 220px;
+    line-height: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background: var(--red-radish);
+
+    &:focus {
+      background-color: var(--mars-red);
+    }
+  }
+}
+
+.header-top {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: min-content auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.product-options {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    padding: 15px;
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+
+    &--order {
+      text-decoration: none;
+      color: var(--white);
+      background: var(--siren-of-nature);
+
+      &:hover {
+        background-color: var(--field-green);
+      }
+
+      &:focus {
+        background: var(--siren-of-nature);
+        opacity: 50%;
+      }
+    }
+  }
+
+  &__item--not-empty {
+    background: var(--red-radish);
+  }
+}
+
+.navigation {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--passionate-blueberry);
+    box-shadow: inset 0px -5px 0px var(--bunting);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &:hover {
+      background-color: var(--bunting);
+    }
+    &:focus {
+      background-color: var(--midnight-express);
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 16px 28px 20px 28px;
+    text-decoration: none;
+    color: var(--white);
+
+    &:focus {
+      color: var(--white);
+      opacity: 0.5;
+    }
+  }
+}

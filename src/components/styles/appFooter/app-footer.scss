@@ -1,0 +1,35 @@
+.app-footer {
+  background-color: var(--passionate-blueberry);
+  color: var(--distant-horizon);
+  padding-bottom: 20px;
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 220px;
+    line-height: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background: var(--red-radish);
+  }
+
+  &__section {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.company-info {
+  &__address {
+    text-align: center;
+  }
+
+  &__phone {
+    text-align: right;
+  }
+}

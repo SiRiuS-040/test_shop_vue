@@ -1,0 +1,39 @@
+.app-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  &__section {
+    height: 100%;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+
+    &--single {
+      grid-template-columns: 1fr;
+    }
+    &--double {
+      grid-template-columns: 1fr 1fr;
+    }
+    &--triple {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &--slider {
+      display: flex;
+      flex-wrap: nowrap;
+      max-width: 100%;
+      overflow-x: scroll;
+    }
+  }
+
+  &__slider {
+    & .carousel__slide {
+      padding: 10px;
+    }
+  }
+}
+
