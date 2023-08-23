@@ -73,7 +73,6 @@ export default {
         AppMain,
         AppFooter,
         AppCatalogItem,
-
         Carousel,
         Slide,
         Pagination,
@@ -104,7 +103,6 @@ export default {
         loadCatalogRandomItems(this.catalogData, this.loadedCatalogData, catalogItemsToShow)
 
         if (this.marketData.loadedCatalog.length > 3) {
-            console.log(this.marketData.loadedCatalog.length)
             this.showSlider = true
         } else {
             this.showSlider = false
