@@ -12,7 +12,7 @@
                             Выбранный товар в наличии!
                         </p>
                     </div>
-                    <div class="app-main__section app-item__section">`
+                    <div class="app-main__section app-item__section">
                         <div class="app-item__card item-card">
                             <div class="item-card__top">
                                 <div class="item-card__image-wrapper">
@@ -36,7 +36,7 @@
                                         Цена: {{ catalogData[itemIndex].price }} р.
                                     </p>
                                     <UiButton
-                                        @click="addItemToCart(catalogData[itemIndex], marketData)"
+                                        @click="addItemToCart(catalogData[itemIndex], appData)"
                                         buttonType="add-cart"
                                         class="item-card__add-cart"
                                     >
@@ -61,14 +61,15 @@
 
 <script>
 
+import { useRoute } from 'vue-router'
+
+
 import AppHeader from "./AppHeader.vue";
 import AppMain from "./AppMain.vue";
 import AppFooter from "./AppFooter.vue";
 import UiButton from "./UiButton.vue";
-import { marketData } from "./features/appMarketData";
 import { addItemToCart } from "./features/useMarketApp";
-
-import catalogTestData from "./features/testData.json";
+import {useMarket} from "@/components/features/useMarket";
 
 export default {
     name: "PageCatalogItem",
@@ -81,33 +82,26 @@ export default {
 
     data() {
         return {
-            marketData,
-            itemIid: this.$route.params.id,
-            catalogData: marketData.marketCatalog,
-            itemIndex: Number,
-            dataLoaded: false,
-            itemData: {},
             addItemToCart,
         };
     },
 
-
-    mounted() {
-        Object.assign(this.catalogData, catalogTestData)
-        this.itemIndex = this.catalogData.findIndex(catalogItem => catalogItem.id === this.itemIid);
-        this.dataLoaded = true
-    },
-
-    methods: {
-    },
-
-
     setup() {
-        const getImageUrl = (name) => {
-            return new URL(`../src/assets/img/goods/${name}.jpg`, import.meta.url).href
-        }
+        const route = useRoute();
+        const {
+            appData,
+            catalogData,
+            dataLoaded,
+        } = useMarket();
+
+        const itemIid = route.params.id;
+        const itemIndex =  catalogData.value.findIndex(catalogItem => catalogItem.id === itemIid);
+
         return {
-            getImageUrl
+            appData,
+            catalogData,
+            dataLoaded,
+            itemIndex
         }
     },
 }

@@ -14,7 +14,7 @@
                     >
                         <template #desc>
                             Корзина:
-                            {{ marketData.cartData.cartOverallItems }}
+                            {{ cartItems }}
                         </template>
                     </UiButton>
                     <UiButton
@@ -52,8 +52,8 @@
 
 import AppModalCart from "./AppModalCart.vue";
 import UiButton from "./UiButton.vue";
-
-import { marketData } from "./features/appMarketData";
+import {useMarket} from "@/components/features/useMarket";
+import {ref} from "vue";
 
 export default {
     name: "AppHeader",
@@ -62,19 +62,24 @@ export default {
         AppModalCart,
     },
 
-    data() {
-        return {
-            isModalCartVisible: false,
-            marketData,
-        };
-    },
+    setup() {
+        const {
+            cartItems,
+        } = useMarket();
 
-    methods: {
-        showModalCart() {
-            this.isModalCartVisible = true;
-        },
-        closeModal() {
-            this.isModalCartVisible = false;
+        const isModalCartVisible = ref(false);
+        const showModalCart = () => {
+            isModalCartVisible.value = true;
+        };
+        const closeModal = () => {
+            isModalCartVisible.value = false;
+        };
+
+        return {
+            isModalCartVisible,
+            showModalCart,
+            closeModal,
+            cartItems,
         }
     },
 }
